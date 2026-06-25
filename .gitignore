@@ -1,0 +1,15 @@
+# Python (Backend)
+__pycache__/
+*.pyc
+.venv/
+env/
+.env
+
+# Node / Vue.js (Frontend)
+node_modules/
+dist/
+.vite/
+.env.local
+
+# Système
+.DS_Store
