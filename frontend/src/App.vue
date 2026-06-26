@@ -65,7 +65,9 @@ const ongletActif = ref('series')
       </KeepAlive>
     </main>
   </div>
-  <footer class="footer">
-    groupe 14
-  </footer>
+<footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+  <aside>
+    <p>Copyright © {new Date().getFullYear()} - groupe 14</p>
+  </aside>
+</footer>
 </template>

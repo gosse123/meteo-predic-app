@@ -166,10 +166,10 @@ def get_saisonnalite(variable: str = Query(default="temperature", description="V
         9: "Sep", 10: "Oct", 11: "Nov", 12: "Déc"
     }
 
-    groupé = df.groupby("mois")[variable].agg(["mean", "std", "min", "max"]).round(2)
+    group = df.groupby("mois")[variable].agg(["mean", "std", "min", "max"]).round(2)
 
     mois_list = []
-    for mois_num, row in groupé.iterrows():
+    for mois_num, row in group.iterrows():
         mois_list.append({
             "mois": int(mois_num),
             "nom": noms_mois[int(mois_num)],
