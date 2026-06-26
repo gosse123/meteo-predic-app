@@ -27,19 +27,25 @@
 
 Module 
 # 📈 **Séries temporelles** : Visualisation des données brutes avec moyenne mobile ajustable 
-<img src="docs/assets/1.png" />
+<img src="docs/assets/serie.png" />
 
 # 📉 **Tendance & Saisonnalité** : Analyse de la tendance linéaire et des cycles mensuels 
 
-<img src="docs/assets/2.png"/>
+<img src="docs/assets/saison.png"/>
  
 # 🔗 **Corrélation** : Matrice de corrélation de Pearson entre les variables météo 
 
-<img src="docs/assets/4.png"/>
+<img src="docs/assets/corelation.png"/>
 
-# 🤖 **Régression & Prédiction** : Modèle de régression multiple avec formulaire de prédiction 
+# 🤖 **Régression & Prédiction** : Modèle de régression multiple 
 
-<img src="docs/assets/3.png" />
+<img src="docs/assets/regression.png" />
+
+# 🤖  Prédiction  :  formulaire de prédiction de la temperature en fonctions de l'humidite , le vent et du pression
+
+<img src="docs/assets/predict.png" />
+
+
 ---
 
 ## 🎯 Objectif du projet
