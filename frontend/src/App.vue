@@ -16,7 +16,7 @@ const ongletActif = ref('series')
       <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-3">
           <span class="text-2xl">🌤️</span>
-          <h1 class="text-xl font-black text-gray-900 tracking-tight">Météo Ouaga Analytics</h1>
+          <h1 class="text-xl font-black text-gray-900 tracking-tight">Météo Ouaga Analytics | groupe 14</h1>
         </div>
         
         <!-- Liste des Onglets -->
@@ -65,4 +65,7 @@ const ongletActif = ref('series')
       </KeepAlive>
     </main>
   </div>
+  <footer class="footer">
+    groupe 14
+  </footer>
 </template>

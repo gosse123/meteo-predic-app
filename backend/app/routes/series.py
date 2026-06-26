@@ -23,13 +23,9 @@ def charger_donnees():
 # ─────────────────────────────────────────────
 # ROUTE 1 : Évolution temporelle d'une variable
 # ─────────────────────────────────────────────
+
 @router.get("/evolution")
-@router.get("/evolution")
-def get_evolution(
-    variable: str = Query(default="temperature", description="Variable à analyser"),
-    annee: Optional[int] = Query(default=None, description="Filtrer par année"),
-    fenetre_mobile: int = Query(default=7, ge=2, le=30, description="Fenêtre moyenne mobile en jours")
-):
+def get_evolution(variable: str = Query(default="temperature", description="Variable à analyser"),annee: Optional[int] = Query(default=None, description="Filtrer par année"),fenetre_mobile: int = Query(default=7, ge=2, le=30, description="Fenêtre moyenne mobile en jours")):
     variables_autorisees = ["temperature", "humidite", "pression", "vent", "precipitations"]
 
     if variable not in variables_autorisees:
@@ -75,9 +71,7 @@ def get_evolution(
 # ROUTE 2 : Tendance générale sur toute la période
 # ─────────────────────────────────────────────
 @router.get("/tendance")
-def get_tendance(
-    variable: str = Query(default="temperature", description="Variable à analyser")
-):
+def get_tendance(variable: str = Query(default="temperature", description="Variable à analyser")):
     """
     Calcule la tendance linéaire d'une variable sur toute la période.
     Un coefficient positif signifie que la variable augmente avec le temps.
@@ -151,9 +145,7 @@ def get_tendance(
 # ROUTE 3 : Saisonnalité — pattern mensuel
 # ─────────────────────────────────────────────
 @router.get("/saisonnalite")
-def get_saisonnalite(
-    variable: str = Query(default="temperature", description="Variable à analyser")
-):
+def get_saisonnalite(variable: str = Query(default="temperature", description="Variable à analyser")):
     """
     Analyse le pattern saisonnier en calculant la moyenne de chaque mois
     sur toutes les années disponibles.
@@ -209,9 +201,7 @@ def get_saisonnalite(
 # ROUTE 4 : Comparaison annuelle
 # ─────────────────────────────────────────────
 @router.get("/comparaison-annuelle")
-def get_comparaison_annuelle(
-    variable: str = Query(default="temperature", description="Variable à analyser")
-):
+def get_comparaison_annuelle(variable: str = Query(default="temperature", description="Variable à analyser")):
     """
     Compare les moyennes annuelles d'une variable pour voir son évolution
     d'une année à l'autre.

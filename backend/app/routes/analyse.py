@@ -147,10 +147,9 @@ def get_regression_simple(variable_x: str = "humidite"):
         X, y, test_size=0.2, random_state=42
     )
 
-    # Entraînement du modèle
-    modele = LinearRegression()
-    modele.fit(X_train, y_train)
-
+    
+    modele = LinearRegression()  # sa c'est le choix du model 
+    modele.fit(X_train, y_train) # Entraînement du modèle
     # Prédictions sur les données de test
     y_pred = modele.predict(X_test)
 

@@ -187,7 +187,7 @@ const chartOptions = computed(() => {
     <!-- Zone d'affichage principale -->
     <div v-else class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-black text-gray-800 tracking-tight">Chronologie & Analyse Temporelle</h2>
+        <h2 class="text-xl font-black text-gray-800 tracking-tight">Chronologie & Analyse <strong>{{ variable }}</strong></h2>
         <span class="text-xs font-medium text-gray-400">Période : {{ annee || 'Historique Complet' }}</span>
       </div>
       
