@@ -180,7 +180,7 @@ const chartOptionsSaison = computed(() => {
             <p class="text-xs text-gray-400 mt-1">Extrêmes saisonniers calculés automatiquement :</p>
           </div>
 
-          <div class="space-y-3 flex-grow justify-center flex flex-col">
+          <div class="space-y-3 grow justify-center flex flex-col">
             <!-- Maximum cyclique -->
             <div class="p-4 bg-rose-50 rounded-xl border border-rose-100">
               <span class="text-xs font-bold text-rose-600 uppercase block tracking-wider">Mois le plus élevé</span>

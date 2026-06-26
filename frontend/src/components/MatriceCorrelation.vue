@@ -47,7 +47,7 @@ onMounted(() => {
 
       <!-- Grille Graphique de type Heatmap -->
       <div class="overflow-x-auto">
-        <table class="w-full min-w-[600px] border-collapse text-sm text-center">
+        <table class="w-full min-w-600 border-collapse text-sm text-center">
           <thead>
             <tr class="bg-gray-50">
               <th class="p-3 text-left font-bold text-gray-600 border-b">Variables</th>
