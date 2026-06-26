@@ -4,7 +4,8 @@ import EvolutionTemporelle from './components/EvolutionTemporelle.vue'
 import SaisonnaliteEtTendance from './components/SaisonnaliteEtTendance.vue'
 import AnalyseRegressionGraphique from './components/AnalyseRegression.vue'
 import MatriceCorrelation from './components/MatriceCorrelation.vue'
-import FormulairePrediction from './components/FormulairePrediction.vue' // ← 1. IMPORTER
+import FormulairePrediction from './components/FormulairePrediction.vue' 
+import Apropos from './components/Apropos.vue' 
 
 const ongletActif = ref('series')
 </script>
@@ -25,28 +26,28 @@ const ongletActif = ref('series')
             :class="ongletActif === 'series' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
             class="px-4 py-2 text-xs font-bold rounded-lg transition"
           >
-            Séries Temporelles
+            📈 Analyse temporelle
           </button>
           <button 
             @click="ongletActif = 'saison'"
             :class="ongletActif === 'saison' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
             class="px-4 py-2 text-xs font-bold rounded-lg transition"
           >
-            Saisonnalité
+            🌦 Saisonnalité
           </button>
           <button 
             @click="ongletActif = 'regression'"
             :class="ongletActif === 'regression' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
             class="px-4 py-2 text-xs font-bold rounded-lg transition"
           >
-            Régression
+            📉 Régression linéaire
           </button>
           <button 
             @click="ongletActif = 'correlation'"
             :class="ongletActif === 'correlation' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
             class="px-4 py-2 text-xs font-bold rounded-lg transition"
           >
-            Corrélations
+            🔗 Corrélations
           </button>          
           <!-- 2. AJOUTER LE BOUTON D'ONGLET -->
           <button 
@@ -55,6 +56,13 @@ const ongletActif = ref('series')
             class="px-4 py-2 text-xs font-bold rounded-lg transition text-rose-600"
           >
             🔮 Prédictions IA
+          </button>
+           <button 
+            @click="ongletActif = 'about'" 
+            :class="ongletActif === 'about' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'" 
+            class="px-3 py-1.5 text-xs font-bold rounded-lg transition whitespace-nowrap border-l pl-3 border-gray-300"
+          >
+            ℹ️ À propos
           </button>
         </nav>
       </div>
@@ -67,7 +75,8 @@ const ongletActif = ref('series')
           ongletActif === 'saison' ? SaisonnaliteEtTendance :
           ongletActif === 'regression' ? AnalyseRegressionGraphique :
           ongletActif === 'correlation' ? MatriceCorrelation :
-          FormulairePrediction // ← 3. PASSER LE COMPOSANT ICI
+          ongletActif === 'predict' ? FormulairePrediction :
+          Apropos 
         " />
       </KeepAlive>
     </main>
