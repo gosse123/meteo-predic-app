@@ -26,21 +26,21 @@ const ongletActif = ref('series')
             :class="ongletActif === 'series' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
             class="px-4 py-2 text-xs font-bold rounded-lg transition"
           >
-            Séries Temporelles
+            📈 Analyse temporelle
           </button>
           <button 
             @click="ongletActif = 'saison'"
             :class="ongletActif === 'saison' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
             class="px-4 py-2 text-xs font-bold rounded-lg transition"
           >
-            Saisonnalité
+            🌦 Saisonnalité
           </button>
           <button 
             @click="ongletActif = 'regression'"
             :class="ongletActif === 'regression' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'"
             class="px-4 py-2 text-xs font-bold rounded-lg transition"
           >
-            Régression
+           🔗 Corrélations
           </button>
           <button 
             @click="ongletActif = 'correlation'"
