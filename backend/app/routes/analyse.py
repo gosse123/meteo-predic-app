@@ -253,3 +253,55 @@ def get_regression_multiple():
             "y_predit": [round(v, 2) for v in y_pred[:20].tolist()]
         }
     }
+    
+    
+from pydantic import BaseModel, Field
+
+# 1. Définir la structure des données reçues du formulaire Vue.js
+class PredictionInput(BaseModel):
+    humidite: float = Field(..., ge=0, le=100, description="Humidité en %")
+    pression: float = Field(..., ge=900, le=1100, description="Pression en hPa")
+    vent: float = Field(..., ge=0, le=150, description="Vitesse du vent en km/h")
+
+# 2. Créer la route POST pour la prédiction
+@router.post("/predire-temperature")
+def predire_temperature(payload: PredictionInput):
+    """
+    Prend les variables climatiques en entrée, entraîne la régression multiple,
+    et retourne la température prédite ainsi que l'équation pour le bouton explication.
+    """
+    df = charger_donnees()
+    predicteurs = ["humidite", "pression", "vent"]
+    df_clean = df[["temperature"] + predicteurs].dropna()
+
+    X = df_clean[predicteurs].values
+    y = df_clean["temperature"].values
+
+    # Entraînement du modèle de régression multiple
+    modele = LinearRegression()
+    modele.fit(X, y)
+
+    # Extraction des coefficients calculés par l'algorithme
+    coef_h = float(modele.coef_[0])
+    coef_p = float(modele.coef_[1])
+    coef_v = float(modele.coef_[2])
+    intercept_b = float(modele.intercept_)
+
+    # Calcul de la prédiction avec les données de l'utilisateur
+    temperature_predite = (coef_h * payload.humidite) + (coef_p * payload.pression) + (coef_v * payload.vent) + intercept_b
+
+    return {
+        "temperature_predite": round(temperature_predite, 2),
+        "valeurs_saisies": {
+            "humidite": payload.humidite,
+            "pression": payload.pression,
+            "vent": payload.vent
+        },
+        "details_modele": {
+            "coef_humidite": round(coef_h, 4),
+            "coef_pression": round(coef_p, 4),
+            "coef_vent": round(coef_v, 4),
+            "ordonnee_b": round(intercept_b, 4),
+            "formule_complete": f"Température = ({round(coef_h, 4)} × Humidité) + ({round(coef_p, 4)} × Pression) + ({round(coef_v, 4)} × Vent) + {round(intercept_b, 4)}"
+        }
+    }
