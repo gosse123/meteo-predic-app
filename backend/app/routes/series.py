@@ -9,7 +9,7 @@ router = APIRouter(prefix="/series", tags=["Séries temporelles"])
 
 
 def charger_donnees():
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     full_path = os.path.join(base_dir, "dataset", "meteo_ouaga.csv")
 
     if not os.path.exists(full_path):

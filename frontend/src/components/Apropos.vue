@@ -134,7 +134,7 @@ const auteurs = [
         </div>
         
         <div class="pt-6 border-t border-gray-100 text-center text-[10px] text-gray-400 font-mono">
-          Université Ouaga | Projet d'Études
+          UVBF | Projet d'Études
         </div>
       </div>
 
