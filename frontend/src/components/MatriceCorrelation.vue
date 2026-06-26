@@ -47,9 +47,9 @@ onMounted(() => {
 
       <!-- Grille Graphique de type Heatmap -->
       <div class="overflow-x-auto">
-        <table class="w-full min-w-600 border-collapse text-sm text-center">
+        <table class="w-full table-fixed border-collapse text-sm text-center">
           <thead>
-            <tr class="bg-gray-50">
+            <tr class="bg-gray-50/80">
               <th class="p-3 text-left font-bold text-gray-600 border-b">Variables</th>
               <th v-for="v in donnees.variables" :key="v" class="p-3 font-bold text-gray-600 border-b capitalize">
                 {{ v }}
