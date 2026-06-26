@@ -24,13 +24,22 @@
 
 > *Les captures d'écran ci-dessous illustrent les différents modules interactifs de l'application.*
 
-| Module | Description |
-|--------|-------------|
-| 📈 **Séries temporelles** | Visualisation des données brutes avec moyenne mobile ajustable |
-| 📉 **Tendance & Saisonnalité** | Analyse de la tendance linéaire et des cycles mensuels |
-| 🔗 **Corrélation** | Matrice de corrélation de Pearson entre les variables météo |
-| 🤖 **Régression & Prédiction** | Modèle de régression multiple avec formulaire de prédiction |
 
+Module 
+# 📈 **Séries temporelles** : Visualisation des données brutes avec moyenne mobile ajustable 
+<img src="docs/assets/1.png" />
+
+# 📉 **Tendance & Saisonnalité** : Analyse de la tendance linéaire et des cycles mensuels 
+
+<img src="docs/assets/2.png"/>
+ 
+# 🔗 **Corrélation** : Matrice de corrélation de Pearson entre les variables météo 
+
+<img src="docs/assets/4.png"/>
+
+# 🤖 **Régression & Prédiction** : Modèle de régression multiple avec formulaire de prédiction 
+
+<img src="docs/assets/3.png" />
 ---
 
 ## 🎯 Objectif du projet
