@@ -12,7 +12,7 @@ router = APIRouter(prefix="/analyse", tags=["Analyse mathématique"])
 # Chemin vers le dataset
 DATA_PATH = Path(__file__).resolve().parents[3] / "dataset" / "meteo_ouaga.csv"
 def charger_donnees():
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     full_path = os.path.join(base_dir, "dataset", "meteo_ouaga.csv")
     
     if not os.path.exists(full_path):
